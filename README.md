@@ -1,5 +1,5 @@
 # Galactic Explorers (BED CA1) API Documentation
-##### By Balamurugan Siddhartha (DAAA/FT/1B/07) [P2404312]
+#### By Balamurugan Siddhartha (DAAA/FT/1B/07) [P2404312]
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -30,3 +30,9 @@ To run this application, ensure you have the following installed:
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/ST0503-BED/bed-ca1-BalamuruganSiddhartha.git
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+     
