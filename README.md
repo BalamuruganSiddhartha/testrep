@@ -121,16 +121,18 @@ To set up the project locally, follow the steps below:
 - **Description:** Update the details of an existing user by user_id.
 - **Request Body:**
     ```json
-    {
-      "username": "new_username",
-      "skillpoints": 120
-    }
+   {
+    "username": "superSOC",
+    "skillpoints": 100
+  }
     ```
 - **Response (200 OK):**
     ```json
     {
-      "message": "User updated successfully!"
-    }
+  "user_id": 1,
+  "username": “superSOC ",
+  "skillpoints ": 100
+  }
     ```
 
 #### 4. GET /users/leaderboard
@@ -174,5 +176,104 @@ To set up the project locally, follow the steps below:
     ```
 
 ---
+### Fitness Challenge Endpoints
 
-### Fitness Endpoints
+#### 1. POST /challenges
+- **Description:** Create a new fitness challenge.
+- **Request Body:**
+    ```json
+  {
+  "challenge": "Complete 2.4km within 15 minutes",
+  "user_id": 1
+  "skillpoints": 50
+  }
+    ```
+- **Response (201 Created):**
+    ```json
+  {
+    "challenge _id": 1,
+    "challenge": "Complete 2.4km within 15 minutes”;
+    "creator_id": 1
+    "skillpoints": 50
+  }
+    ```
+
+#### 2. GET /challenges
+- **Description:** Fetch all challenges.
+- **Response (200 OK):**
+    ```json
+    [
+      {
+        "challenge_id": 1,
+        "creator_id": 1,
+        "challenge": "Complete a 5km run in under 30 minutes",
+        "skillpoints": 100
+      },
+      {
+        "challenge_id": 2,
+        "creator_id": 2,
+        "challenge": "Complete 100 push-ups in one go",
+        "skillpoints": 50
+      }
+    ]
+    ```
+
+#### 3. PUT /challenges/{challenge_id}
+- **Description:** Update an existing challenge by its ID.
+- **Request Body:**
+    ```json
+   {
+  "user_id": 1
+  "challenge": “Complete 2.4km within 12 minutes”
+  "skillpoints": 75
+  }
+    ```
+- **Response (200 OK):**
+    ```json
+    {
+  "challenge _id": 1,
+  "challenge": “Complete 2.4km within 12 minutes”;
+  "creator_id": 1
+  "skillpoints": 75
+  }
+    ```
+
+#### 4. DELETE /challenges/{challenge_id}
+- **Description:** Delete a challenge by its ID.
+- **Response (204 No Content):**
+    - No content is returned in the response body when a challenge is successfully deleted.
+
+#### 5. POST /challenges/{challenge_id}
+- **Description:** Add skillpoints to a user upon completing a challenge.
+- **Request Body:**
+    ```json
+    {
+      "user_id": 1,
+      "challenge_id": 1
+    }
+    ```
+- **Response (201 Created):**
+    ```json
+    {
+      "message": "User has successfully completed the challenge and earned skillpoints."
+    }
+    ```
+
+#### 6. GET /challenges/{challenge_id}
+- **Description:** Get all users who completed a specific challenge.
+- **Response (200 OK):**
+    ```json
+    [
+      {
+        "user_id": 1,
+        "username": "space_traveler",
+        "completed": true
+      },
+      {
+        "user_id": 2,
+        "username": "star_explorer",
+        "completed": true
+      }
+    ]
+    ```
+
