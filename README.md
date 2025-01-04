@@ -75,7 +75,7 @@ To set up the project locally, follow the steps below:
 - **Request Body:**
     ```json
     {
-      "username" : socuser321
+      "username" : "socuser321"
     }
     ```
 - **Response (201 Created):**
