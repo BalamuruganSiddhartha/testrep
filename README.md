@@ -3,12 +3,6 @@
 ---
 This API powers the **Galactic Explorers** Gamified Fitness Tracker, where users can explore planets, join guilds, purchase items from the marketplace, view inventory and complete fitness challenges.
 
-I developed the Galactic Explorers API to power a gamified fitness tracker aimed at engaging users in both physical and virtual activities. In this project, I enabled users to explore planets, join guilds, view their inventory and purchase items from the marketplace, while completing fitness challenges to earn skillpoints (**in-game currency**).
-
-I implemented a space theme to enhance the immersive experience, drawing inspiration from space exploration to provide a motivational backdrop for physical activity. By blending fitness with gamification, I aimed to encourage users to stay active, track their progress, and compete within a community.
-
-This project serves as my ***CA1 assignment***, where I focused on creating an **engaging** and **interactive** platform that integrates gamification with physical activity tracking.
-
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -26,6 +20,11 @@ This project serves as my ***CA1 assignment***, where I focused on creating an *
 
 **Galactic Explorers API** enables the creation and management of **users**, **challenges**, **guilds**, **inventory**, **marketplace items**, and **exploration activities**. It provides a RESTful interface for interacting with the game data, using Node.js and MySQL.
 
+I developed the Galactic Explorers API to power a gamified fitness tracker aimed at engaging users in both physical and virtual activities. In this project, I enabled users to explore planets, join guilds, view their inventory and purchase items from the marketplace, while completing fitness challenges to earn skillpoints (**in-game currency**).
+
+I implemented a space theme to enhance the immersive experience, drawing inspiration from space exploration to provide a motivational backdrop for physical activity. By blending fitness with gamification, I aimed to encourage users to stay active, track their progress, and compete within a community.
+
+This project serves as my ***CA1 assignment***, where I focused on creating an **engaging** and **interactive** platform that integrates gamification with physical activity tracking.
 ## Prerequisites
 
 Before running the API, ensure you have the following:
