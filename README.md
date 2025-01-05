@@ -387,14 +387,100 @@ No request body required.
 
 ```
 
-Error: 
+*Error*
 - 400 (Missing fields)
 - 404 (User or item not found)
 - 409 (Insufficient skillpoints or item already owned)
 - 500 (Internal server error)
 
 
+## **Sell Item to Marketplace**
 
+**Endpoint:** `POST /marketplace/sell`
+
+**Request Body:**
+```json
+{
+  "user_id": 1,
+  "item_id": 1
+}
+```
+**Response (Success - 200 OK):**
+```json
+{
+    "message": "Item sold successfully!",
+    "item_sold": "Nano-Heal Kit",
+    "remaining_skillpoints": 200
+}
+
+```
+
+*Error*
+- 400 (Missing fields)
+- 404 (User or item not found)
+- 409 (Insufficient skillpoints or item not owned and tries to sell!)
+- 500 (Internal server error)
+
+
+## Inventory Endpoints
+
+### View User's Inventory  
+**GET /inventory/{user_id}**  
+- **Request**: `user_id` (Path parameter)  
+- **Success (200 OK)**:  
+    ```json
+  [
+  {
+    "item_id": 0,
+    "item_name": "Essential Survival Pack",
+    "item_description": "A basic survival pack containing essential items for space exploration.",
+    "item_type": "Gear",
+    "acquisition_date": "2025-01-05 15:04:06"
+  }
+  ]
+    ```
+
+---
+
+### View User's Inventory by Item Type  
+**GET /inventory/{user_id}/{item_type}**  
+- **Request**: `user_id` (Path parameter), `item_type` (Path parameter)  
+- **Success (200 OK)**:  
+    ```json
+    [
+      {
+        "item_id": 1,
+        "item_name": "Nano-Heal Kit",
+        "item_description": "Repairs 50% of total health using nanobots",
+        "item_type": "Gear",
+        "acquisition_date": "2025-01-04T12:30:00"
+      },
+      ...
+    ]
+    ```
+
+---
+
+## A cool thing to note about GET /inventory/{user_id} 
+### Adds Essential Survival Pack (When First Accessed)  
+**GET /inventory/{user_id}**  
+- **Request**: `user_id` (Path parameter)  
+- **Success (201 Created)**:  
+    ```json
+    {
+      "message": "Survival Pack added to inventory.",
+      "item_name": "Essential Survival Pack",
+      "user_id": 1
+    }
+    ```
+
+---
+
+### Error Handling  
+- 400 (Bad Request): Missing required data  
+- 404 (Not Found): User or item not found  
+- 409 (Conflict): Item already in inventory  
+- 500 (Internal Server Error): Error while accessing or updating inventory
 
 
 
