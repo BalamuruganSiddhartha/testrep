@@ -47,7 +47,7 @@ Before running the API, ensure you have the following:
     ```
 
 3. **Set Up Database:**
-    - Update `db.js` in the `services` folder with your MySQL credentials.
+    - Update `.env` file with your MySQL credentials.
     - Run the following command to initialize the database tables:
     ```bash
     npm run init_tables
@@ -55,9 +55,10 @@ Before running the API, ensure you have the following:
 
 4. **Start the Application:**
     ```bash
-    npm start
+    npm run dev
     ```
     The server should be running on `http://localhost:3000`.
+
 
 ## API Endpoints
 
