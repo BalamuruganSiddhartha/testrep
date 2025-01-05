@@ -561,6 +561,146 @@ No request body required.
 - 409 (Conflict): Planet already explored  
 - 500 (Internal Server Error): Server issues
 
+## Guilds Endpoints
+
+### 1. Create a Guild  
+**POST /guilds**  
+- **Description**: Allows users to create a new guild in GalacticExplorers.  
+- **Request**:  
+    ```json
+    {
+      "user_id": 1,
+      "guild_name": "Galactic Warriors",
+      "guild_description": "A guild of elite space explorers."
+    }
+    ```  
+- **Success (201 Created)**:  
+    ```json
+    {
+      "message": "Guild created successfully!",
+      "guild_id": 1,
+      "guild_name": "Galactic Warriors"
+    }
+    ```
+
+---
+
+### 2. Get All Guilds  
+**GET /guilds**  
+- **Description**: Allows users to view all available guilds in GalacticExplorers.  
+- **Request**: None  
+- **Success (200 OK)**:  
+    ```json
+    [
+      {
+        "guild_id": 1,
+        "guild_name": "Galactic Warriors",
+        "guild_description": "A guild of elite space explorers.",
+        "member_count": 50,
+        "total_skillpoints": 5000
+      },
+      {
+        "guild_id": 2,
+        "guild_name": "Space Rangers",
+        "guild_description": "A guild for fearless adventurers.",
+        "member_count": 30,
+        "total_skillpoints": 3000
+      }
+    ]
+    ```
+
+---
+
+### 3. Join a Guild  
+**POST /guilds/join**  
+- **Description**: Allows a user to join an existing guild by providing their `user_id` and `guild_id`.  
+- **Request**:  
+    ```json
+    {
+      "user_id": 1,
+      "guild_id": 2
+    }
+    ```  
+- **Success (200 OK)**:  
+    ```json
+    {
+      "message": "Successfully joined the guild!"
+    }
+    ```
+
+---
+
+### 4. Leave a Guild  
+**POST /guilds/leave**  
+- **Description**: Allows a user to leave a guild they have joined by providing their `user_id` and the corresponding `guild_id`.  
+- **Request**:  
+    ```json
+    {
+      "user_id": 1,
+      "guild_id": 2
+    }
+    ```  
+- **Success (200 OK)**:  
+    ```json
+    {
+      "message": "Successfully left the guild!"
+    }
+    ```
+
+---
+
+### 5. Get Members of a Guild  
+**GET /guilds/{guild_id}**  
+- **Description**: Fetches members of the guild identified by `guild_id`.  
+- **Request**: None  
+- **Success (200 OK)**:  
+    ```json
+    {
+      "guild_id": 2,
+      "guild_name": "Space Rangers",
+      "members": [
+        {
+          "user_id": 1,
+          "username": "space_hero",
+          "skillpoints": 150
+        },
+        {
+          "user_id": 2,
+          "username": "galactic_warrior",
+          "skillpoints": 200
+        }
+      ]
+    }
+    ```
+
+---
+
+### 6. Delete a Guild  
+**DELETE /guilds**  
+- **Description**: Allows the creator of a guild to delete their guild.  
+- **Request**:  
+    ```json
+    {
+      "user_id": 1,
+      "guild_id": 1
+    }
+    ```  
+- **Success (200 OK)**:  
+    ```json
+    {
+      "message": "Guild deleted successfully!"
+    }
+    ```
+
+---
+
+### Error Handling  
+- 400 (Bad Request): Missing `user_id`, `guild_id`, `guild_name`, or `guild_description`.  
+- 404 (Not Found): Guild or User not found.  
+- 409 (Conflict): User already belongs to a guild.  
+- 403 (Forbidden): Only the guild creator can delete the guild.  
+- 500 (Internal Server Error): Server issues.
+
 
 ## HTTP Status Codes Used (Error Handling)
 
