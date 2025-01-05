@@ -79,7 +79,7 @@ Before running the API, ensure you have the following:
 
 ### Marketplace Endpoints
 
-- **POST /marketplace**: Add a new item to the marketplace (ADMINS ONLY!) [Only can be used with Authentication Key that Admins have access to]
+- **POST /marketplace**: Add a new item to the marketplace (ADMINS ONLY!)
 - **GET /marketplace**: Get all items for sale
 - **GET /marketplace/{item_type}**: Get items by type
 - **POST /marketplace/buy**: Buy an item from the marketplace
