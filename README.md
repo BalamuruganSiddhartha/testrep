@@ -242,7 +242,7 @@ No request body required.
 
 
 ## Marketplace Endpoints
----
+
 ## **Get Marketplace Items**
 
 **Endpoint:** `GET /marketplace`  
@@ -499,8 +499,6 @@ No request body required.
 
 ## Explore Endpoints
 
-## Explore Endpoints
-
 ### Get All Available Planets  
 **GET /explore**  
 - **Description**: Retrieves a list of all planets available for exploration.  
@@ -574,7 +572,7 @@ No request body required.
 
 ## Guilds Endpoints
 
-### 1. Create a Guild  
+### Create a Guild  
 **POST /guilds**  
 - **Description**: Allows users to create a new guild in GalacticExplorers.  
 - **Request**:  
@@ -596,7 +594,7 @@ No request body required.
 
 ---
 
-### 2. Get All Guilds  
+### Get All Guilds  
 **GET /guilds**  
 - **Description**: Allows users to view all available guilds in GalacticExplorers.  
 - **Request**: None  
@@ -622,7 +620,7 @@ No request body required.
 
 ---
 
-### 3. Join a Guild  
+### Join a Guild  
 **POST /guilds/join**  
 - **Description**: Allows a user to join an existing guild by providing their `user_id` and `guild_id`.  
 - **Request**:  
@@ -641,7 +639,7 @@ No request body required.
 
 ---
 
-### 4. Leave a Guild  
+### Leave a Guild  
 **POST /guilds/leave**  
 - **Description**: Allows a user to leave a guild they have joined by providing their `user_id` and the corresponding `guild_id`.  
 - **Request**:  
@@ -660,7 +658,7 @@ No request body required.
 
 ---
 
-### 5. Get Members of a Guild  
+### Get Members of a Guild  
 **GET /guilds/{guild_id}**  
 - **Description**: Fetches members of the guild identified by `guild_id`.  
 - **Request**: None  
@@ -686,7 +684,7 @@ No request body required.
 
 ---
 
-### 6. Delete a Guild  
+### Delete a Guild  
 **DELETE /guilds**  
 - **Description**: Allows the creator of a guild to delete their guild.  
 - **Request**:  
