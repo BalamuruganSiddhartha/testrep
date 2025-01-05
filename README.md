@@ -62,6 +62,7 @@ Before running the API, ensure you have the following:
 4. **Set Up Database:**
     - Update `.env` file with your MySQL credentials. The environment variables will be used in the `db.js` file located in the `src/services` directory
       Open the `.env` file and add the following lines:
+      
 
    ```
    DB_HOST=<your_database_host>
@@ -70,9 +71,11 @@ Before running the API, ensure you have the following:
    DB_DATABASE=<your_database_name>
    ```
 
+
    Replace `<your_database_host>`, `<your_database_user>`, `<your_database_password>`, and `<your_database_name>` with the appropriate values for your database connection.
 
     - Run the following command to initialize the database tables:
+    - 
     ```bash
     npm run init_tables
     ```
