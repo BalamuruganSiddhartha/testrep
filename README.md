@@ -1,6 +1,6 @@
 # Galactic Explorers (BED CA1) API Documentation
 ### Name: Balamurugan Siddhartha Class: DAAA/FT/1B/07 Admin No.: P2404312
-
+---
 This API powers the **Galactic Explorers** Gamified Fitness Tracker, where users can explore planets, join guilds, purchase items from the marketplace, and complete fitness challenges.
 
 I developed the Galactic Explorers API to power a gamified fitness tracker aimed at engaging users in both physical and virtual activities. In this project, I enabled users to explore planets, join guilds, view their inventory and purchase items from the marketplace, while completing fitness challenges to earn skillpoints (**in-game currency**).
