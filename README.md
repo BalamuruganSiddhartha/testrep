@@ -102,7 +102,7 @@ Before running the API, ensure you have the following:
 
 # Key API Endpoints For Galactic Explorers
 
-## User & FitnessChallenge Endpoints
+## User Endpoints
 
 ## **Create a New User**  
 **Endpoint:** `POST /users`  
@@ -212,6 +212,9 @@ No request body required.
 *Error*
 - User not found (Invalid user_id)
 
+  
+## Fitness Challenges Endpoints
+
 ## **Create Challenge** 
 **Endpoint:** `POST /challenges`  
 
@@ -236,8 +239,10 @@ No request body required.
 *Error*
 - Missing required fields. (Status 400 Bad Request)
 
-## Marketplace Endpoints
 
+
+## Marketplace Endpoints
+---
 ## **Get Marketplace Items**
 
 **Endpoint:** `GET /marketplace`  
