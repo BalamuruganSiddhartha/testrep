@@ -47,7 +47,7 @@ Before running the API, ensure you have the following:
 
     - Click on the "Clone Repository" button.
 
-    - In the repository URL input field, enter https://github.com/ST0503-BED/your-repository-name.git.
+    - In the repository URL input field, enter [https://github.com/ST0503-BED/your-repository-name](https://github.com/ST0503-BED/bed-ca1-BalamuruganSiddhartha).git.
 
     - Choose a local directory where you want to clone the repository.
 
