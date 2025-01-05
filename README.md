@@ -387,7 +387,17 @@ No request body required.
 
 ```
 
-Error: Insufficient skillpoints or item already owned.
+Error: 
+- 400 (Missing fields)
+- 404 (User or item not found)
+- 409 (Insufficient skillpoints or item already owned)
+- 500 (Internal server error)
+
+
+
+
+
+
 
 ## HTTP Status Codes Used (Error Handling)
 
