@@ -1,6 +1,6 @@
 # Galactic Explorers (BED CA1) API Documentation
 
-This API powers the **Galactic Explorers** game, where users can explore planets, join guilds, purchase items from the marketplace, and complete challenges.
+This API powers the **Galactic Explorers** Gamified Fitness Tracker, where users can explore planets, join guilds, purchase items from the marketplace, and complete fitness challenges.
 
 ## Table of Contents
 
@@ -93,6 +93,49 @@ Before running the API, ensure you have the following:
 - **POST /guilds/leave**: Leave a guild
 - **GET /guilds/{guild_id}**: Get members of a guild
 - **DELETE /guilds**: Delete a guild (Creator only)
+
+## Key API Endpoints For Galactic Explorers
+## 1. **Create a New User**  
+**Endpoint:** `POST /users`  
+**Request Body:**
+```json
+{
+  "username": "space_traveler"
+}
+```
+**Response (Success - 201 Created):**
+```json
+{
+  "user_id": 1,
+  "username": "space_traveler",
+  "skillpoints": 0
+}
+```
+*Error*
+- 400 Bad Request: Missing username.
+- 409 Conflict: Username already exists.
+
+
+## 2. **Get All Users**  
+**Endpoint:** `GET /users`  
+
+**Request:**  
+No request body required.
+
+**Response (Success - 200 OK):**
+```json
+[
+  {
+    "user_id": 1,
+    "username": "space_traveler",
+    "skillpoints": 100
+  },
+  {
+    "user_id": 2,
+    "username": "star_explorer",
+    "skillpoints": 50
+  }
+]
 
 ## Error Handling
 
