@@ -40,20 +40,33 @@ Before running the API, ensure you have the following:
     ```bash
     git clone https://github.com/ST0503-BED/bed-ca1-BalamuruganSiddhartha.git
     ```
+    OR
+    - Open Visual Studio Code (VSCode) on your local machine.
 
-2. **Install Dependencies:**
+    - Click on the "Source Control" icon in the left sidebar (the icon looks like a branch).
+
+    - Click on the "Clone Repository" button.
+
+    - In the repository URL input field, enter https://github.com/ST0503-BED/your-repository-name.git.
+
+    - Choose a local directory where you want to clone the repository.
+
+    - Click on the "Clone" button to start the cloning process.
+
+
+3. **Install Dependencies:**
     ```bash
     npm install
     ```
 
-3. **Set Up Database:**
+4. **Set Up Database:**
     - Update `.env` file with your MySQL credentials.
     - Run the following command to initialize the database tables:
     ```bash
     npm run init_tables
     ```
 
-4. **Start the Application:**
+5. **Start the Application:**
     ```bash
     npm run dev
     ```
