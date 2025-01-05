@@ -213,32 +213,146 @@ No request body required.
 - User not found (Invalid user_id)
 
   
-## Fitness Challenges Endpoints
+## Challenges Endpoints
 
-## **Create Challenge** 
-**Endpoint:** `POST /challenges`  
+### 1. Create a New Challenge
+**POST /challenges**  
+- **Description**: Allows an admin or authorized user to create a new fitness challenge.  
+- **Request**:  
+    ```json
+    {
+      "user_id": 1,
+      "challenge": "Run 5km",
+      "skillpoints": 100
+    }
+    ```  
+- **Success (201 Created)**:  
+    ```json
+    {
+      "challenge_id": 1,
+      "challenge": "Run 5km",
+      "creator_id": 1,
+      "skillpoints": 100
+    }
+    ```
 
-**Request body:**  
-```json
-{
-  "challenge": "Complete a space race",
-  "user_id": 1,
-  "skillpoints": 50
-}
-```
+---
 
-**Response (Success - 201 Created):**
-```json
-{
-  "challenge_id": 1,
-  "challenge": "Complete a space race",
-  "creator_id": 1,
-  "skillpoints": 50
-}
-```
-*Error*
-- Missing required fields. (Status 400 Bad Request)
+### 2. Get All Challenges
+**GET /challenges**  
+- **Description**: Retrieves a list of all available challenges.  
+- **Request**: None  
+- **Success (200 OK)**:  
+    ```json
+    [
+      {
+        "challenge_id": 1,
+        "challenge": "Run 5km",
+        "creator_id": 1,
+        "skillpoints": 100
+      },
+      {
+        "challenge_id": 2,
+        "challenge": "Cycle 10km",
+        "creator_id": 2,
+        "skillpoints": 120
+      }
+    ]
+    ```
 
+---
+
+### 3. Update a Challenge
+**PUT /challenges/{challenge_id}**  
+- **Description**: Updates the challenge details, such as the challenge name and skill points.  
+- **Request**:  
+    ```json
+    {
+      "user_id": 1,
+      "challenge": "Run 10km",
+      "skillpoints": 150
+    }
+    ```  
+- **Success (200 OK)**:  
+    ```json
+    {
+      "challenge_id": 1,
+      "challenge": "Run 10km",
+      "creator_id": 1,
+      "skillpoints": 150
+    }
+    ```
+
+---
+
+### 4. Delete a Challenge
+**DELETE /challenges/{challenge_id}**  
+- **Description**: Deletes a challenge by its ID. Only the creator of the challenge can delete it.  
+- **Request**: None  
+- **Success (204 No Content)**:  
+    ```json
+    {}
+    ```
+
+---
+
+### 5. Participate in a Challenge
+**POST /challenges/{challenge_id}**  
+- **Description**: Allows a user to participate in a challenge and earn skill points for completion.  
+- **Request**:  
+    ```json
+    {
+      "user_id": 1,
+      "completed": true,
+      "creation_date": "2025-01-05T10:00:00",
+      "notes": "Completed the challenge successfully"
+    }
+    ```  
+- **Success (201 Created)**:  
+    ```json
+    {
+      "complete_id": 1,
+      "challenge_id": 1,
+      "user_id": 1,
+      "completed": true,
+      "creation_date": "2025-01-05T10:00:00",
+      "notes": "Completed the challenge successfully"
+    }
+    ```
+
+---
+
+### 6. Get All Users Who Participated in a Challenge
+**GET /challenges/{challenge_id}**  
+- **Description**: Retrieves all users who have participated in a specific challenge.  
+- **Request**: None  
+- **Success (200 OK)**:  
+    ```json
+    [
+      {
+        "user_id": 1,
+        "completed": true,
+        "creation_date": "2025-01-05T10:00:00",
+        "notes": "Completed the challenge successfully"
+      },
+      {
+        "user_id": 2,
+        "completed": false,
+        "creation_date": "2025-01-06T12:00:00",
+        "notes": "Did not complete the challenge"
+      }
+    ]
+    ```
+
+---
+
+### Error Handling
+- **400 Bad Request**: Missing required fields such as `user_id`, `challenge`, `skillpoints`.  
+- **404 Not Found**: Challenge or user not found.  
+- **403 Forbidden**: User is not the creator of the challenge when trying to modify or delete it.  
+- **500 Internal Server Error**: An error occurred on the server side.
+
+These endpoints provide the functionality to create, update, delete, and participate in fitness challenges, all while earning rewards and skill points. They form the backbone of the **Galactic Explorers** fitness tracking system.
 
 
 ## Marketplace Endpoints
