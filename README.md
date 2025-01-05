@@ -17,10 +17,10 @@ This project serves as my ***CA1 assignment***, where I focused on creating an *
 - [API Endpoints](#api-endpoints)
   - [User Endpoints](#user-endpoints)
   - [Challenge Endpoints](#challenge-endpoints)
-  - [Marketplace Endpoints](#Marketplace-Endpoints)
+  - [Marketplace Endpoints](#marketplace-endpoints)
   - [Explore Endpoints](#explore-endpoints)
   - [Guild Endpoints](#guild-endpoints)
-- [Error Handling](#HTTP-Status-Codes-Used (Error Handling))
+- [Error Handling](#http-status-codes-used-error-handling)
 
 ## Project Overview
 
