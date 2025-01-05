@@ -457,7 +457,7 @@ No request body required.
       },
       ...
     ]
-    ```
+  
 
 ---
 
@@ -487,6 +487,80 @@ No request body required.
 - 500 (Internal Server Error): Error while accessing or updating inventory
 
 
+## Explore Endpoints
+
+## Explore Endpoints
+
+### Get All Available Planets  
+**GET /explore**  
+- **Description**: Retrieves a list of all planets available for exploration.  
+- **Request**: None  
+- **Success (200 OK)**:  
+    ```json
+    [
+      {
+        "planet_id": 1,
+        "planet_name": "Nebula-5",
+        "planet_description": "A mysterious nebula filled with cosmic debris and unknown resources.",
+        "reward_skillpoints": 100
+      },
+      {
+        "planet_id": 2,
+        "planet_name": "Asteroid Belt",
+        "planet_description": "A dense field of asteroids rich with minerals and rare resources.",
+        "reward_skillpoints": 50
+      }
+    ]
+    ```
+
+---
+
+### Explore a Planet  
+**POST /explore/{planet_id}**  
+- **Description**: Allows a user to explore a planet and receive skill points upon successful exploration.  
+- **Request**:  
+    ```json
+    {
+      "user_id": 1
+    }
+    ```  
+- **Success (200 OK)**:  
+    ```json
+    {
+      "message": "Exploration completed successfully!",
+      "reward_skillpoints": 100
+    }
+    ```
+
+---
+
+### View Explored Planets for a User  
+**GET /explore/{user_id}**  
+- **Description**: Retrieves a list of planets that a user has already explored.  
+- **Request**: None  
+- **Success (200 OK)**:  
+    ```json
+    [
+      {
+        "planet_name": "Nebula-5",
+        "exploration_date": "2025-01-04T12:30:00",
+        "reward_skillpoints": 100
+      },
+      {
+        "planet_name": "Asteroid Belt",
+        "exploration_date": "2025-01-03T14:30:00",
+        "reward_skillpoints": 50
+      }
+    ]
+    ```
+
+---
+
+### Error Handling
+- 400 (Bad Request): Missing `user_id`  
+- 404 (Not Found): Planet or User not found  
+- 409 (Conflict): Planet already explored  
+- 500 (Internal Server Error): Server issues
 
 
 ## HTTP Status Codes Used (Error Handling)
