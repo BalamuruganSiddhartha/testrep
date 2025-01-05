@@ -1,7 +1,7 @@
 # Galactic Explorers (BED CA1) API Documentation
 ### Name: Balamurugan Siddhartha Class: DAAA/FT/1B/07 Admin No.: P2404312
 ---
-This API powers the **Galactic Explorers** Gamified Fitness Tracker, where users can explore planets, join guilds, purchase items from the marketplace, and complete fitness challenges.
+This API powers the **Galactic Explorers** Gamified Fitness Tracker, where users can explore planets, join guilds, purchase items from the marketplace, view inventory and complete fitness challenges.
 
 I developed the Galactic Explorers API to power a gamified fitness tracker aimed at engaging users in both physical and virtual activities. In this project, I enabled users to explore planets, join guilds, view their inventory and purchase items from the marketplace, while completing fitness challenges to earn skillpoints (**in-game currency**).
 
@@ -24,7 +24,7 @@ This project serves as my ***CA1 assignment***, where I focused on creating an *
 
 ## Project Overview
 
-**Galactic Explorers API** enables the creation and management of users, challenges, guilds, marketplace items, and exploration activities. It provides a RESTful interface for interacting with the game data, using Node.js and MySQL.
+**Galactic Explorers API** enables the creation and management of **users**, **challenges**, **guilds**, **inventory**, **marketplace items**, and **exploration activities**. It provides a RESTful interface for interacting with the game data, using Node.js and MySQL.
 
 ## Prerequisites
 
@@ -58,7 +58,6 @@ Before running the API, ensure you have the following:
     npm run dev
     ```
     The server should be running on `http://localhost:3000`.
-
 
 ## API Endpoints
 
@@ -224,7 +223,7 @@ No request body required.
 
 ### 1. Create a New Challenge
 **POST /challenges**  
-- **Description**: Allows an admin or authorized user to create a new fitness challenge.  
+- **Description**: Allows an admin or authorised user to create a new fitness challenge.  
 - **Request**:  
     ```json
     {
@@ -513,7 +512,7 @@ No request body required.
 ```json
 {
   "message": "Purchase successful!",
-  "item_bought" : "Nano-Heal Kit"
+  "item_bought" : "Nano-Heal Kit",
   "remaining_skillpoints": 850
 }
 
@@ -837,6 +836,6 @@ No request body required.
 The API uses appropriate HTTP status codes for error handling:
 
 - **400 Bad Request**: Missing required data (e.g., missing user ID or challenge)
-- **403 Forbidden**: Unauthorized actions (e.g., user trying to access restricted routes)
+- **403 Forbidden**: Unauthorised actions (e.g., user trying to access restricted routes)
 - **404 Not Found**: Resource not found (e.g., user or challenge not found)
 - **409 Conflict**: Conflicting requests (e.g., trying to buy an item the user already owns)
