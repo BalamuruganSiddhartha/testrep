@@ -8,9 +8,9 @@ This API powers the **Galactic Explorers** Gamified Fitness Tracker, where users
 - [Prerequisites](#prerequisites)
 - [Installation Instructions](#installation-instructions)
 - [API Endpoints](#api-endpoints)
-  - [User Endpoints](#user-endpoints)
-  - [Challenge Endpoints](#challenge-endpoints)
-  - [Marketplace Endpoints](#marketplace-endpoints)
+  - [User Endpoints](#User-&-FitnessChallenge-Endpoints)
+  - [Challenge Endpoints](#User-&-FitnessChallenge-Endpoints)
+  - [Marketplace Endpoints](#Marketplace-Endpoints)
   - [Explore Endpoints](#explore-endpoints)
   - [Guild Endpoints](#guild-endpoints)
 - [Error Handling](#HTTP-Status-Codes-Used (Error Handling))
@@ -94,7 +94,9 @@ Before running the API, ensure you have the following:
 - **GET /guilds/{guild_id}**: Get members of a guild
 - **DELETE /guilds**: Delete a guild (Creator only)
 
-## Key API Endpoints For Galactic Explorers
+# Key API Endpoints For Galactic Explorers
+
+## User & FitnessChallenge Endpoints
 
 ## 1. **Create a New User**  
 **Endpoint:** `POST /users`  
@@ -228,6 +230,8 @@ No request body required.
 *Error*
 - Missing required fields. (Status 400 Bad Request)
 
+## Marketplace Endpoints
+
 ## 7. **Get Marketplace Items**
 
 **Endpoint:** `GET /marketplace`  
@@ -325,7 +329,44 @@ No request body required.
 ]
 
 ```
-  
+
+## 8. **Filter Marketplace by Item Type**
+
+**Endpoint:** `GET /marketplace/{item_type}`  
+
+**Request body:**  
+No request body required.
+
+**Response (Success - 200 OK):**
+```json
+[
+  {
+    "item_id": 1,
+    "item_name": "Nano-Heal Kit",
+    "item_description": "Repairs 50% of total health using nanobots",
+    "item_type": "Gear",
+    "cost": 150
+  },
+  {
+    "item_id": 2,
+    "item_name": "Oxygen Refill Canister",
+    "item_description": "Replenishes oxygen levels in zero-gravity environments",
+    "item_type": "Gear",
+    "cost": 100
+  },
+  {
+    "item_id": 3,
+    "item_name": "Jetpack Module",
+    "item_description": "Allows short bursts of flight in low-gravity zones",
+    "item_type": "Gear",
+    "cost": 300
+  }
+]
+```
+*Error*
+- If the requested item_type does not exist, returns 404 Item type not found.
+
+
 ## HTTP Status Codes Used (Error Handling)
 
 The API uses appropriate HTTP status codes for error handling:
