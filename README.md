@@ -430,13 +430,13 @@ No request body required.
 - **Success (200 OK)**:  
     ```json
   [
-  {
-    "item_id": 0,
-    "item_name": "Essential Survival Pack",
-    "item_description": "A basic survival pack containing essential items for space exploration.",
-    "item_type": "Gear",
-    "acquisition_date": "2025-01-05 15:04:06"
-  }
+    {
+      "item_id": 0,
+      "item_name": "Essential Survival Pack",
+      "item_description": "A basic survival pack containing essential items for space exploration.",
+      "item_type": "Gear",
+      "acquisition_date": "2025-01-05 15:04:06"
+    }
   ]
     ```
 
@@ -467,11 +467,15 @@ No request body required.
 - **Request**: `user_id` (Path parameter)  
 - **Success (201 Created)**:  
     ```json
+  [
     {
-      "message": "Survival Pack added to inventory.",
+      "item_id": 0,
       "item_name": "Essential Survival Pack",
-      "user_id": 1
+      "item_description": "A basic survival pack containing essential items for space exploration.",
+      "item_type": "Gear",
+      "acquisition_date": "2025-01-05 15:04:06"
     }
+  ]
     ```
 
 ---
