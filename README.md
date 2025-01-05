@@ -438,7 +438,7 @@ No request body required.
       "acquisition_date": "2025-01-05 15:04:06"
     }
   ]
-    ```
+  
 
 ---
 
@@ -461,7 +461,7 @@ No request body required.
 
 ---
 
-## A cool thing to note about GET /inventory/{user_id} 
+## A cool thing to note about `GET /inventory/{user_id}`
 ### Adds Essential Survival Pack (When First Accessed)  
 **GET /inventory/{user_id}**  
 - **Request**: `user_id` (Path parameter)  
