@@ -386,6 +386,9 @@ No request body required.
 }
 
 ```
+
+Error: Insufficient skillpoints or item already owned.
+
 ## HTTP Status Codes Used (Error Handling)
 
 The API uses appropriate HTTP status codes for error handling:
