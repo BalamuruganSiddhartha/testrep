@@ -77,6 +77,11 @@ Before running the API, ensure you have the following:
 - **POST /challenges/{challenge_id}**: Create a new challenge completion record
 - **GET /challenges/{challenge_id}**: Get all users who completed a challenge
 
+### Inventory Endpoints
+
+- **GET /inventory/{user_id}**: Allows user to see their inventory after purchasing from marketplace by user_id `Easter Egg: Adds Essential Survival Pack (When First Accessed)!`
+- **GET /inventory/{user_id}/{item_type}**: Allows easy view for users to filter their inventory by item_type
+  
 ### Marketplace Endpoints
 
 - **POST /marketplace**: Add a new item to the marketplace (ADMINS ONLY!)
