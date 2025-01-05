@@ -10,7 +10,7 @@ This API powers the **Galactic Explorers** Gamified Fitness Tracker, where users
 - [Installation Instructions](#installation-instructions)
 - [API Endpoints](#api-endpoints)
   - [User Endpoints](#user-endpoints)
-  - [Challenge Endpoints](#challenge-endpoints)
+  - [Challenge Endpoints](#fitness-challenge-endpoints)
   - [Marketplace Endpoints](#marketplace-endpoints)
   - [Explore Endpoints](#explore-endpoints)
   - [Guild Endpoints](#guild-endpoints)
@@ -95,7 +95,7 @@ Before running the API, ensure you have the following:
 - **GET /users/leaderboard**: Get the leaderboard based on skillpoints
 - **GET /users/{user_id}**: Get user details with guild information
 
-### Challenge Endpoints
+### Fitness Challenge Endpoints
 
 - **POST /challenges**: Create a new challenge
 - **GET /challenges**: Get all challenges
@@ -245,7 +245,7 @@ No request body required.
 - User not found (Invalid user_id)
 
   
-## Challenges Endpoints
+## Fitness Challenges Endpoints
 
 ### 1. Create a New Challenge
 **POST /challenges**  
