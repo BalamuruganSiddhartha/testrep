@@ -13,7 +13,7 @@ This API powers the **Galactic Explorers** Gamified Fitness Tracker, where users
   - [Marketplace Endpoints](#marketplace-endpoints)
   - [Explore Endpoints](#explore-endpoints)
   - [Guild Endpoints](#guild-endpoints)
-- [Error Handling](#error-handling)
+- [Error Handling](#HTTP-Status-Codes-Used (Error Handling))
 
 ## Project Overview
 
@@ -95,6 +95,7 @@ Before running the API, ensure you have the following:
 - **DELETE /guilds**: Delete a guild (Creator only)
 
 ## Key API Endpoints For Galactic Explorers
+
 ## 1. **Create a New User**  
 **Endpoint:** `POST /users`  
 **Request Body:**
@@ -119,7 +120,7 @@ Before running the API, ensure you have the following:
 ## 2. **Get All Users**  
 **Endpoint:** `GET /users`  
 
-**Request:**  
+**Request body:**  
 No request body required.
 
 **Response (Success - 200 OK):**
@@ -136,8 +137,196 @@ No request body required.
     "skillpoints": 50
   }
 ]
+```
 
-## Error Handling
+## 3. **Update User by ID**  
+**Endpoint:** `PUT /users/{user_id}`  
+
+**Request Body:**  
+```json
+{
+  "username": "new_username",
+  "skillpoints": 150
+}
+```
+
+**Response (Success - 200 OK):**
+```json
+{
+  "user_id": 1,
+  "username": "new_username",
+  "skillpoints": 150
+}
+```
+*Error*
+- If the requested user_id does not exist, returns 404 Not Found.
+- If the provided username is already associated with another user, returns 409 Conflict
+
+## 4. **Get Users Leaderboard**
+
+**Endpoint:** `GET /users/leaderboard`  
+
+**Request body:**  
+No request body required.
+
+**Response (Success - 200 OK):**
+```json
+[
+  {
+    "user_id": 1,
+    "username": "space_traveler",
+    "skillpoints": 100
+  },
+  {
+    "user_id": 2,
+    "username": "star_explorer",
+    "skillpoints": 50
+  }
+]
+```
+
+## 5. **Get User Profile**
+
+**Endpoint:** `GET /users/{user_id}`  
+
+**Request body:**  
+No request body required.
+
+**Response (Success - 200 OK):**
+```json
+{
+  "user_id": 1,
+  "username": "space_traveler",
+  "skillpoints": 100,
+  "user's guild": "Galactic Explorers"
+}
+```
+*Error*
+- User not found (Invalid user_id)
+
+## 6. **Create Challenge** 
+**Endpoint:** `POST /challenges`  
+
+**Request body:**  
+```json
+{
+  "challenge": "Complete a space race",
+  "user_id": 1,
+  "skillpoints": 50
+}
+```
+
+**Response (Success - 201 Created):**
+```json
+{
+  "challenge_id": 1,
+  "challenge": "Complete a space race",
+  "creator_id": 1,
+  "skillpoints": 50
+}
+```
+*Error*
+- Missing required fields. (Status 400 Bad Request)
+
+## 7. **Get Marketplace Items**
+
+**Endpoint:** `GET /marketplace`  
+
+**Request body:**  
+No request body required.
+
+**Response (Success - 200 OK):**
+```json
+[
+  {
+    "item_id": 1,
+    "item_name": "Nano-Heal Kit",
+    "item_description": "Repairs 50% of total health using nanobots",
+    "item_type": "Gear",
+    "cost": 150
+  },
+  {
+    "item_id": 2,
+    "item_name": "Oxygen Refill Canister",
+    "item_description": "Replenishes oxygen levels in zero-gravity environments",
+    "item_type": "Gear",
+    "cost": 100
+  },
+  {
+    "item_id": 3,
+    "item_name": "Jetpack Module",
+    "item_description": "Allows short bursts of flight in low-gravity zones",
+    "item_type": "Gear",
+    "cost": 300
+  },
+  {
+    "item_id": 4,
+    "item_name": "Plasma Drill",
+    "item_description": "Drills through asteroid cores to extract rare minerals",
+    "item_type": "Tool",
+    "cost": 600
+  },
+  {
+    "item_id": 5,
+    "item_name": "Star Compass",
+    "item_description": "A navigation device for tracking nearby planets",
+    "item_type": "Tool",
+    "cost": 300
+  },
+  {
+    "item_id": 6,
+    "item_name": "Hologram Projector",
+    "item_description": "Creates a decoy hologram to distract enemies",
+    "item_type": "Tool",
+    "cost": 350
+  },
+  {
+    "item_id": 7,
+    "item_name": "Explorer Suit",
+    "item_description": "Standard suit with moderate protection and oxygen supply",
+    "item_type": "Armor",
+    "cost": 200
+  },
+  {
+    "item_id": 8,
+    "item_name": "Radiation Shield Suit",
+    "item_description": "Protects against radiation in hostile environments",
+    "item_type": "Armor",
+    "cost": 500
+  },
+  {
+    "item_id": 9,
+    "item_name": "Voidwalker Suit",
+    "item_description": "Advanced suit for extreme zero-gravity survival",
+    "item_type": "Armor",
+    "cost": 800
+  },
+  {
+    "item_id": 10,
+    "item_name": "Starlight Crystal",
+    "item_description": "A rare crystal that emits unlimited light",
+    "item_type": "Artifact",
+    "cost": 1200
+  },
+  {
+    "item_id": 11,
+    "item_name": "Void Sphere",
+    "item_description": "A mysterious orb with unknown gravitational properties",
+    "item_type": "Artifact",
+    "cost": 2000
+  },
+  {
+    "item_id": 12,
+    "item_name": "Chrono Shard",
+    "item_description": "Enables brief manipulation of time",
+    "item_type": "Artifact",
+    "cost": 2500
+  }
+]
+
+```
+  
+## HTTP Status Codes Used (Error Handling)
 
 The API uses appropriate HTTP status codes for error handling:
 
