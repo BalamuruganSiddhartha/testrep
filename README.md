@@ -75,7 +75,7 @@ Before running the API, ensure you have the following:
    Replace `<your_database_host>`, `<your_database_user>`, `<your_database_password>`, and `<your_database_name>` with the appropriate values for your database connection.
 
     - Run the following command to initialize the database tables:
-    - 
+   
     ```bash
     npm run init_tables
     ```
