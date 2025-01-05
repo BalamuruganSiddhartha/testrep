@@ -98,7 +98,7 @@ Before running the API, ensure you have the following:
 
 ## User & FitnessChallenge Endpoints
 
-## 1. **Create a New User**  
+## **Create a New User**  
 **Endpoint:** `POST /users`  
 **Request Body:**
 ```json
@@ -119,7 +119,7 @@ Before running the API, ensure you have the following:
 - 409 Conflict: Username already exists.
 
 
-## 2. **Get All Users**  
+## **Get All Users**  
 **Endpoint:** `GET /users`  
 
 **Request body:**  
@@ -141,7 +141,7 @@ No request body required.
 ]
 ```
 
-## 3. **Update User by ID**  
+## **Update User by ID**  
 **Endpoint:** `PUT /users/{user_id}`  
 
 **Request Body:**  
@@ -164,7 +164,7 @@ No request body required.
 - If the requested user_id does not exist, returns 404 Not Found.
 - If the provided username is already associated with another user, returns 409 Conflict
 
-## 4. **Get Users Leaderboard**
+## **Get Users Leaderboard**
 
 **Endpoint:** `GET /users/leaderboard`  
 
@@ -187,7 +187,7 @@ No request body required.
 ]
 ```
 
-## 5. **Get User Profile**
+## **Get User Profile**
 
 **Endpoint:** `GET /users/{user_id}`  
 
@@ -206,7 +206,7 @@ No request body required.
 *Error*
 - User not found (Invalid user_id)
 
-## 6. **Create Challenge** 
+## **Create Challenge** 
 **Endpoint:** `POST /challenges`  
 
 **Request body:**  
@@ -232,7 +232,7 @@ No request body required.
 
 ## Marketplace Endpoints
 
-## 7. **Get Marketplace Items**
+## **Get Marketplace Items**
 
 **Endpoint:** `GET /marketplace`  
 
@@ -330,7 +330,7 @@ No request body required.
 
 ```
 
-## 8. **Filter Marketplace by Item Type**
+## **Filter Marketplace by Item Type**
 
 **Endpoint:** `GET /marketplace/{item_type}`  
 
@@ -366,7 +366,26 @@ No request body required.
 *Error*
 - If the requested item_type does not exist, returns 404 Item type not found.
 
+## **Buy Item from Marketplace**
 
+**Endpoint:** `POST /marketplace/buy`
+
+**Request Body:**
+```json
+{
+  "user_id": 1,
+  "item_id": 1
+}
+```
+**Response (Success - 200 OK):**
+```json
+{
+  "message": "Purchase successful!",
+  "item_bought" : "Nano-Heal Kit"
+  "remaining_skillpoints": 850
+}
+
+```
 ## HTTP Status Codes Used (Error Handling)
 
 The API uses appropriate HTTP status codes for error handling:
