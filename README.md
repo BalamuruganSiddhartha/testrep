@@ -1,4 +1,5 @@
 # Galactic Explorers (BED CA1) API Documentation
+## Name: Balamurugan Siddhartha Class: DAAA/FT/1B/07 Admin No.: P2404312
 
 This API powers the **Galactic Explorers** Gamified Fitness Tracker, where users can explore planets, join guilds, purchase items from the marketplace, and complete fitness challenges.
 
